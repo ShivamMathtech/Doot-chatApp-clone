@@ -1,0 +1,40 @@
+.register-page {
+  height: 100vh;
+  background-color: #4eac6d;
+}
+.register-box {
+  height: 98vh;
+  background-color: #ffffff;
+  border-radius: 13px;
+}
+.my-p {
+  font-size: 20px;
+  color: #a7d6d6;
+}
+.register-form {
+  height: 90%;
+  width: 27vw;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+}
+label {
+  font-weight: 600;
+}
+.box {
+  height: 40px;
+  background-color: #f6f6f6;
+}
+.logout-form {
+  height: 40vh;
+  width: 27vw;
+  margin: 25vh auto;
+}
+.user-circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #dceee2;
+  margin: auto;
+}
