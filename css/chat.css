@@ -41,3 +41,17 @@
   width: 40px;
   border-radius: 50%;
 }
+.chat-header {
+  height: 80px;
+  background-color: red;
+}
+.message-area {
+  height: calc(100% - 120px);
+  background-color: #9b59b6;
+}
+.msg-send-area {
+  height: 40px;
+}
+.sendbtn {
+  background-color: #5eb37a;
+}
