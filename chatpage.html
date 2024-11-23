@@ -21,123 +21,225 @@
   </head>
   <body>
     <div class="container-fluid chat-page p-0">
-      <div class="row m-0 p-0 h-100">
-        <div class="col-md-1 left-navbarp-0">
-          <ul class="nav flex-column h-75 p-0">
-            <li class="nav-item p-0">
-              <a class="nav-link active" aria-current="page" href="#"
-                ><i class="fa-solid fa-message"></i
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa-solid fa-user-circle"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa-regular fa-message"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="fa-solid fa-info-circle"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="fa-solid fa-phone"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="fa-solid fa-user-friends"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="fa-solid fa-cog"></i>
-              </a>
-            </li>
-          </ul>
-          <div class="user-circle"></div>
-        </div>
-        <div class="col-md-3 middle-bar">
-          <section class="section-1">
-            <div class="row mt-2">
-              <div class="col-md-8">
-                <h5>Contacts</h5>
+      <div class="overlay">
+        <div class="form-box">
+          <div class="row m-0">
+            <div class="col-md-12 d-flex justify-content-end p-0">
+              <div
+                class="add-box d-flex justify-content-center align-items-center"
+              >
+                <a href="" class="close-btn" onclick="closeForm()">
+                  <i class="fa-solid fa-x text-danger"></i
+                ></a>
               </div>
-              <div class="col-md-4 d-flex justify-content-end">
-                <div
-                  class="add-box d-flex justify-content-center align-items-center"
-                >
-                  <i class="fa-solid fa-add text-success"></i>
+            </div>
+          </div>
+          <div class="form-area p-3"></div>
+        </div>
+        <div class="row m-0 p-0 h-100">
+          <div class="col-md-1 left-navbarp-0">
+            <ul class="nav flex-column h-75 p-0">
+              <li class="nav-item p-0">
+                <a class="nav-link active" aria-current="page" href="#"
+                  ><i class="fa-solid fa-message"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fa-solid fa-user-circle"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fa-regular fa-message"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa-solid fa-info-circle"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa-solid fa-user-friends"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa-solid fa-cog"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="user-circle"></div>
+          </div>
+          <div class="col-md-3 middle-bar">
+            <section class="section-1">
+              <div class="row mt-2">
+                <div class="col-md-8">
+                  <h5>Contacts</h5>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                  <div
+                    class="add-box d-flex justify-content-center align-items-center"
+                  >
+                    <a href="#" class="contact-add" onclick="addFormOpen()">
+                      <i class="fa-solid fa-add text-success"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <input
-                  type="search"
-                  name=""
-                  id=""
-                  class="form-control mt-2"
-                  placeholder="Search Contacts"
-                />
+              <div class="row">
+                <div class="col-md-12">
+                  <input
+                    type="search"
+                    name=""
+                    id=""
+                    class="form-control mt-2"
+                    placeholder="Search Contacts"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="row mt-2">
-              <div class="col-md-2">
-                <div class="user-circle-1"></div>
+              <div class="row mt-2">
+                <div class="col-md-2">
+                  <div class="user-circle-1"></div>
+                </div>
+                <div class="col-md-9">
+                  <b class="small">Marguerite Camplbell</b>
+                </div>
+                <div class="col-md-1">
+                  <i class="fa-solid fa-ellipsis-vertical text-success"></i>
+                </div>
               </div>
-              <div class="col-md-9">
-                <b class="small">Marguerite Camplbell</b>
+              <div class="row mt-2">
+                <div class="col-md-2">
+                  <div class="user-circle-1"></div>
+                </div>
+                <div class="col-md-9">
+                  <b class="small">Emily Thompson</b>
+                </div>
+                <div class="col-md-1">
+                  <i class="fa-solid fa-ellipsis-vertical text-success"></i>
+                </div>
               </div>
-              <div class="col-md-1">
-                <i class="fa-solid fa-ellipsis-vertical text-success"></i>
+            </section>
+          </div>
+          <div class="col-md-8 chat-area p-0">
+            <header class="chat-header">
+              <div class="row m-0 h-100">
+                <div
+                  class="col-md-1 d-flex justify-content-center align-items-center"
+                >
+                  <div class="user-circle-1">
+                    <div class="active-dot"></div>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-center">
+                  <div class="txt-box">
+                    <b>Norris Decker</b> <br />
+                    <small class="small atv-txt">Active</small>
+                  </div>
+                </div>
+                <div
+                  class="col-md-9 d-flex justify-content-end align-items-center chat-nav"
+                >
+                  <ul class="nav chat-nav">
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="fa-solid fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="fa-solid fa-phone"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="fa-solid fa-video"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="fa-solid fa-info-circle"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="fa-solid fa-ellipsis-v"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="row mt-2">
-              <div class="col-md-2">
-                <div class="user-circle-1"></div>
-              </div>
-              <div class="col-md-9">
-                <b class="small">Emily Thompson</b>
-              </div>
-              <div class="col-md-1">
-                <i class="fa-solid fa-ellipsis-vertical text-success"></i>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col-md-8 chat-area p-0">
-          <header class="chat-header"></header>
-          <div class="message-area"></div>
-          <div class="msg-send-area">
-            <div class="row m-0 h-100">
-              <div class="col-md-1 d-flex align-items-center">
-                <i class="fa-solid fa-ellipsis"></i>
-                <i class="fa-regular fa-face-smile ms-3"></i>
-              </div>
-              <div class="col-md-11 d-flex align-items-center">
-                <form action="" class="form w-100">
-                  <input type="text" name="" id="" class="w-75" />
-                  <button class="btn">
-                    <i class="fa-solid fa-microphone"></i>
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-success ms-2 btn-sm sendbtn"
-                  >
-                    <i class="fa-solid fa-paper-plane"></i>
-                  </button>
-                </form>
+            </header>
+            <div class="message-area"></div>
+            <div class="msg-send-area">
+              <div class="row m-0 h-100">
+                <div class="col-md-1 d-flex align-items-center">
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <i class="fa-regular fa-face-smile ms-3"></i>
+                </div>
+                <div class="col-md-11 d-flex align-items-center">
+                  <form action="" class="form w-100">
+                    <input type="text" name="" id="" class="w-75" />
+                    <button class="btn">
+                      <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-success ms-2 btn-sm sendbtn"
+                    >
+                      <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      let form_box = document.querySelector(".form-box");
+      let form_area = document.querySelector(".form-area");
+      function addFormOpen() {
+        form_box.classList.add("open");
+        form_area.innerHTML = `
+        <form method ="GET" class="contact-form">
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      
+        </div>
+         <div class="mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username" >
+        
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+           <input type="checkbox" class="form-check-input" id="exampleCheck1">
+           <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>`;
+        let contact_form = document.querySelector(".contact-form");
+        contact_form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          console.log("data saved");
+        });
+      }
+      function closeForm() {
+        form_box.classList.remove("open");
+      }
+    </script>
   </body>
 </html>
