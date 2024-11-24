@@ -170,7 +170,7 @@
                     <div class="row mt-2">
                       <div class="col-md-2">
                         <div class="user-circle-1">
-                          <img src="img/usa.png" alt="" id="user_img_src" />
+                          <img src="img/ima2.png" alt="" id="user_img_src" />
                         </div>
                       </div>
                       <div class="col-md-9">
@@ -183,9 +183,6 @@
                       </div></div
                   ></a>
                 </li>
-                <!-- <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li> -->
               </ul>
             </section>
           </div>
@@ -232,7 +229,8 @@
                     </li>
                     <li class="nav-item">
                       <a href="" class="nav-link">
-                        <i class="fa-solid fa-ellipsis-v"></i>
+                        <i class="fa-solid fa-ellipsis-v" id="morebtn"></i>
+                        <div class="more_info_form p-2"></div>
                       </a>
                     </li>
                   </ul>
@@ -303,11 +301,9 @@
         form_box.classList.remove("open");
       }
       let chat_header = document.querySelector(".chat-header");
-
       // console.log(u_name.user_name.innerHTML);
       // console.log(chat_header);
       let user_list_item = document.querySelectorAll(".user_list");
-
       // console.log(user_list_item);
       user_list_item.forEach((element) => {
         element.addEventListener("click", (e) => {
@@ -318,8 +314,37 @@
           let u_img_src = chat_header.getElementsByTagName("img");
           u_img_src[0].src = user_img_src;
           u_name.user_name.innerHTML = user_name;
-          console.log(user_name, user_img_src);
         });
+      });
+      let morebtn = document.querySelector("#morebtn");
+      let more_info_form = document.querySelector(".more_info_form");
+      let btnStatus = 0;
+      morebtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (btnStatus == 0) {
+          more_info_form.classList.add("active");
+          // console.log(btnStatus);
+          btnStatus = 1;
+        } else {
+          more_info_form.classList.remove("active");
+          // console.log(btnStatus);
+          btnStatus = 0;
+        }
+        more_info_form.innerHTML = `
+          <div class="row m-0 text-dark mt-2">
+           <div class="col-md-6 p-0">Archive</div>
+          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-shopping-bag"></i></div>
+          </div>
+          <div class="row m-0 text-dark mt-2">
+           <div class="col-md-6 p-0">Muted</div>
+          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-microphone-slash"></i></div>
+          </div>
+          <div class="row m-0 text-dark mt-2">
+           <div class="col-md-6 p-0">Delete</div>
+          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-trash-can"></i></div>
+          </div>
+        `;
       });
     </script>
   </body>

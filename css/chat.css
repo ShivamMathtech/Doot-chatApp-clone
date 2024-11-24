@@ -99,3 +99,20 @@ a {
   text-decoration: none;
   color: black;
 }
+.nav-item {
+  position: relative;
+}
+.more_info_form {
+  position: absolute;
+  height: 100px;
+  width: 120px;
+  left: -100px;
+  top: 40px;
+  background-color: #ffffff;
+  font-size: 12px;
+  margin: 10px auto;
+  display: none;
+}
+.active {
+  display: block !important;
+}
