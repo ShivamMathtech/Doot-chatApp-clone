@@ -104,7 +104,7 @@
                   />
                 </div>
               </div>
-              <div class="row mt-2">
+              <!-- <div class="row mt-2">
                 <div class="col-md-2">
                   <div class="user-circle-1"></div>
                 </div>
@@ -127,6 +127,67 @@
                 </div>
               </div>
             </section>
+          </div> -->
+              <ul class="list-group list-group-flush w-100 p-0">
+                <li class="list-group-item">
+                  <a href="" class="user_list">
+                    <div class="row mt-2">
+                      <div class="col-md-2">
+                        <div class="user-circle-1">
+                          <img src="img/usa1.png" alt="" id="user_img_src" />
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <b class="small" id="user_name">Marguerite Camplbell</b>
+                      </div>
+                      <div class="col-md-1">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical text-success"
+                        ></i>
+                      </div></div
+                  ></a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="user_list">
+                    <div class="row mt-2">
+                      <div class="col-md-2">
+                        <div class="user-circle-1">
+                          <img src="img/usa.png" alt="" id="user_img_src" />
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <b class="small" id="user_name"> Camplbell</b>
+                      </div>
+                      <div class="col-md-1">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical text-success"
+                        ></i>
+                      </div></div
+                  ></a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="user_list">
+                    <div class="row mt-2">
+                      <div class="col-md-2">
+                        <div class="user-circle-1">
+                          <img src="img/usa.png" alt="" id="user_img_src" />
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <b class="small" id="user_name"> Shivam Singh</b>
+                      </div>
+                      <div class="col-md-1">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical text-success"
+                        ></i>
+                      </div></div
+                  ></a>
+                </li>
+                <!-- <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li> -->
+              </ul>
+            </section>
           </div>
           <div class="col-md-8 chat-area p-0">
             <header class="chat-header">
@@ -135,17 +196,18 @@
                   class="col-md-1 d-flex justify-content-center align-items-center"
                 >
                   <div class="user-circle-1">
+                    <img src="img/usa.png" alt="" id="user_img_src" />
                     <div class="active-dot"></div>
                   </div>
                 </div>
-                <div class="col-md-2 d-flex align-items-center">
+                <div class="col-md-3 d-flex align-items-center">
                   <div class="txt-box">
-                    <b>Norris Decker</b> <br />
-                    <small class="small atv-txt">Active</small>
+                    <b class="user_name" id="user_name">Camplbell</b> <br />
+                    <small class="small atv-txt" id="user_status">Active</small>
                   </div>
                 </div>
                 <div
-                  class="col-md-9 d-flex justify-content-end align-items-center chat-nav"
+                  class="col-md-8 d-flex justify-content-end align-items-center chat-nav"
                 >
                   <ul class="nav chat-nav">
                     <li class="nav-item">
@@ -210,27 +272,27 @@
       function addFormOpen() {
         form_box.classList.add("open");
         form_area.innerHTML = `
-        <form method ="GET" class="contact-form">
+         <form method ="GET" class="contact-form">
+          <div class="mb-3">
+             <label for="exampleInputEmail1" class="form-label">Email address</label>
+             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+         </div>
+          <div class="mb-3">
+             <label for="username" class="form-label">User Name</label>
+             <input type="text" class="form-control" id="username" >
+
+         </div>
          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      
-        </div>
-         <div class="mb-3">
-            <label for="username" class="form-label">User Name</label>
-            <input type="text" class="form-control" id="username" >
-        
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-           <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-  </form>`;
+             <label for="exampleInputPassword1" class="form-label">Password</label>
+             <input type="password" class="form-control" id="exampleInputPassword1">
+         </div>
+         <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+        </form>`;
         let contact_form = document.querySelector(".contact-form");
         contact_form.addEventListener("submit", (e) => {
           e.preventDefault();
@@ -240,6 +302,25 @@
       function closeForm() {
         form_box.classList.remove("open");
       }
+      let chat_header = document.querySelector(".chat-header");
+
+      // console.log(u_name.user_name.innerHTML);
+      // console.log(chat_header);
+      let user_list_item = document.querySelectorAll(".user_list");
+
+      // console.log(user_list_item);
+      user_list_item.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          let user_name = element.querySelector("#user_name").textContent;
+          let user_img_src = element.querySelector("#user_img_src").src;
+          let u_name = chat_header.getElementsByTagName("b");
+          let u_img_src = chat_header.getElementsByTagName("img");
+          u_img_src[0].src = user_img_src;
+          u_name.user_name.innerHTML = user_name;
+          console.log(user_name, user_img_src);
+        });
+      });
     </script>
   </body>
 </html>
