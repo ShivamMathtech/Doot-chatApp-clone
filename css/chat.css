@@ -116,3 +116,31 @@ a {
 .active {
   display: block !important;
 }
+.time {
+  display: block;
+  margin-top: -10px;
+}
+.msg-react {
+  min-height: 50px;
+  width: 50%;
+  background-color: #ffffff;
+  overflow-wrap: break-word;
+}
+.message-area {
+  overflow-y: scroll;
+}
+.attach_file_form {
+  position: absolute;
+  height: 240px;
+  width: 200px;
+  bottom: 40px;
+  margin-left: -10px;
+  background-color: #ffffff;
+  display: none;
+}
+#file_upload {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: auto;
+}

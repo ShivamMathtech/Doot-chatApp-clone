@@ -237,19 +237,27 @@
                 </div>
               </div>
             </header>
-            <div class="message-area"></div>
+            <div class="message-area p-2"></div>
             <div class="msg-send-area">
               <div class="row m-0 h-100">
                 <div class="col-md-1 d-flex align-items-center">
-                  <i class="fa-solid fa-ellipsis"></i>
+                  <i class="fa-solid fa-ellipsis" id="file_attach"></i>
+                  <div class="attach_file_form p-2">
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="file_upload"
+                      placeholder="file"
+                    />
+                    <small class="text-center d-block">Attach</small>
+                  </div>
                   <i class="fa-regular fa-face-smile ms-3"></i>
                 </div>
                 <div class="col-md-11 d-flex align-items-center">
-                  <form action="" class="form w-100">
+                  <form class="form w-100 user-msg">
                     <input type="text" name="" id="" class="w-75" />
-                    <button class="btn">
-                      <i class="fa-solid fa-microphone"></i>
-                    </button>
+
+                    <i class="fa-solid fa-microphone" id="microphone"></i>
                     <button
                       type="submit"
                       class="btn btn-success ms-2 btn-sm sendbtn"
@@ -270,27 +278,27 @@
       function addFormOpen() {
         form_box.classList.add("open");
         form_area.innerHTML = `
-         <form method ="GET" class="contact-form">
-          <div class="mb-3">
-             <label for="exampleInputEmail1" class="form-label">Email address</label>
-             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <form method ="GET" class="contact-form">
+             <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-         </div>
-          <div class="mb-3">
-             <label for="username" class="form-label">User Name</label>
-             <input type="text" class="form-control" id="username" >
+            </div>
+             <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="username" >
 
-         </div>
-         <div class="mb-3">
-             <label for="exampleInputPassword1" class="form-label">Password</label>
-             <input type="password" class="form-control" id="exampleInputPassword1">
-         </div>
-         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-         </div>
-         <button type="submit" class="btn btn-primary">Submit</button>
-        </form>`;
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+           </form>`;
         let contact_form = document.querySelector(".contact-form");
         contact_form.addEventListener("submit", (e) => {
           e.preventDefault();
@@ -332,19 +340,63 @@
           btnStatus = 0;
         }
         more_info_form.innerHTML = `
-          <div class="row m-0 text-dark mt-2">
-           <div class="col-md-6 p-0">Archive</div>
-          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-shopping-bag"></i></div>
-          </div>
-          <div class="row m-0 text-dark mt-2">
-           <div class="col-md-6 p-0">Muted</div>
-          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-microphone-slash"></i></div>
-          </div>
-          <div class="row m-0 text-dark mt-2">
-           <div class="col-md-6 p-0">Delete</div>
-          <div class="col-md-6 text-end p-0"><i class="fa-solid fa-trash-can"></i></div>
-          </div>
-        `;
+             <div class="row m-0 text-dark mt-2">
+              <div class="col-md-6 p-0">Archive</div>
+             <div class="col-md-6 text-end p-0"><i class="fa-solid fa-shopping-bag"></i></div>
+             </div>
+             <div class="row m-0 text-dark mt-2">
+              <div class="col-md-6 p-0">Muted</div>
+             <div class="col-md-6 text-end p-0"><i class="fa-solid fa-microphone-slash"></i></div>
+             </div>
+             <div class="row m-0 text-dark mt-2">
+              <div class="col-md-6 p-0">Delete</div>
+             <div class="col-md-6 text-end p-0"><i class="fa-solid fa-trash-can"></i></div>
+             </div>
+           `;
+      });
+
+      let user_msg = document.querySelector(".user-msg");
+      function showTime() {
+        let time = new Date();
+        let hours = time.getHours();
+        let minutes = time.getMinutes();
+        let ampm = hours >= 12 ? "PM" : "AM";
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        let time_str = `${hours}:${minutes} ${ampm}`;
+        setInterval(showTime, 1000);
+        return time_str;
+      }
+
+      user_msg.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let msg_text = user_msg.querySelector("input").value;
+        let msg_area = document.querySelector(".message-area");
+        msg_area.innerHTML += `
+           <div class ="msg-react p-2">
+           ${msg_text}
+           <span class="time-stamp float-end mt-2">
+           ${showTime()}</span>
+             </div>
+           `;
+        user_msg.querySelector("input").value = "";
+      });
+      let file_attach = document.querySelector("#file_attach");
+      let attach_file_form = document.querySelector(".attach_file_form");
+      file_attach.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (btnStatus == 0) {
+          attach_file_form.classList.add("active");
+          btnStatus = 1;
+        } else {
+          attach_file_form.classList.remove("active");
+          btnStatus = 0;
+        }
+      });
+      let microphone = document.querySelector("#microphone");
+      microphone.addEventListener("click", (e) => {
+        e.preventDefault();
+        // code for recording audio
       });
     </script>
   </body>
